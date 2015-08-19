@@ -265,3 +265,31 @@ println()
 can have fields that can override the *parameterless* methods in the parent
 class.
 
+Chapter 12
+=========
+
+Traits have the body like that of classes but are a clever way of providing multiple inheritance.
+
+* Thin Interface: An interface providing small number of methods. The load on implementors is less since they have to implement minimal methods.
+* Rich Interface: An interface providing large number of methods. The load on implementors is more since they have to implement many methods.
+
+Traits provide the middle ground. All the methods of the rich interface can be implemented in the trait itself, and others can be left as abstract. So the users can have a lot more functionality with minimal coding.
+
+
+Chapter 15
+=========
+
+# Case Classes And Pattern Matching
+
+* Case classes allow pattern matching on objects without boilerplate code.
+* These are defined using the `case` keyword.
+* Features:
++ Compiler adds factory methods so no need of using `new`
++ All the arguments of the case class are defined as `val` and are therefore,
+fields.
++ `toString`, `hashCode`, and `equals` are created for free, and these methods
+are applied to the whole tree recursively.
++ `copy` method is added as well, which can create modified copies of a given
+case class. So instead of providing all the values, we can provide only a
+few using named parameters, and the rest are picked from the object being
+copied.
